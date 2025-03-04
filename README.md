@@ -8,6 +8,10 @@ The Survey123 JavaScript API lets you embed, style, and interact with Survey123 
 
 Most of the slides are made available at [Esri Events > Proceedings](https://www.esri.com/en-us/about/events/index/proceedings).
 
-## Related sessions
+## Resources
+- [Survey123 Web App JS API Doc](https://developers.arcgis.com/survey123/api-reference/web-app)
+- [Ismael’s Esri Community blog post](https://community.esri.com/t5/arcgis-survey123-blog/introducing-the-survey123-web-app-javascript-api/ba-p/896667)
+- [Help documentation](https://developers.arcgis.com/survey123/api-reference/web-app/)
+- [codePen examples](https://codepen.io/survey123/collections/)
 
-...
+
