@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #31872e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#surveyContainer {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+} 

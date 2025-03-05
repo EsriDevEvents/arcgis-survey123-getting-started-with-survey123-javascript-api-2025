@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  padding: 0 0.75rem;
+}
+:host calcite-notice {
+  margin-top: 6px;
+}
+:host .heading {
+  margin-inline: 0px;
+  margin-block: 1.25rem 1rem;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+  font-weight: var(--calcite-font-weight-medium);
+}

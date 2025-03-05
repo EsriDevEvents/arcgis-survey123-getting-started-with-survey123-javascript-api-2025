@@ -1,0 +1,81 @@
+:host {
+  display: block;
+}
+:host p {
+  margin: 0 0 10px;
+}
+:host ul.dropdown-menu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 2px 2px;
+  overflow-y: auto;
+  min-width: 100%;
+}
+:host ul.dropdown-menu li {
+  cursor: pointer;
+  outline: none;
+  outline: none;
+  padding: 3px 10px;
+  overflow: hidden;
+}
+:host ul.dropdown-menu li .file-option-item {
+  display: flex;
+  align-items: center;
+}
+:host ul.dropdown-menu li .file-option-item > div {
+  padding: 8px;
+  width: calc(100% - 20px);
+}
+:host ul.dropdown-menu li .file-option-item .title {
+  line-height: 16px;
+  margin-bottom: 5px;
+}
+:host ul.dropdown-menu li .file-option-item .desc {
+  line-height: 16px;
+  white-space: break-spaces;
+}
+:host ul.dropdown-menu li.multi-choice {
+  line-height: 40px;
+  padding-top: 1px;
+}
+:host ul.dropdown-menu li.multi-choice .checkbox-survey123 > label {
+  width: 100%;
+}
+:host ul.dropdown-menu li label {
+  cursor: inherit;
+}
+:host ul.dropdown-menu li label span {
+  line-height: 32px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+:host ul.dropdown-menu li label span:focus {
+  outline: none;
+}
+:host ul.dropdown-menu li:hover, :host ul.dropdown-menu li:focus {
+  background-color: var(--calcite-color-foreground-2);
+  color: var(--calcite-color-text-1);
+  text-decoration-line: none;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+:host ul.dropdown-menu li.active > a ::ng-deep svg path:nth-child(1), :host ul.dropdown-menu li > a:hover ::ng-deep svg path:nth-child(1), :host ul.dropdown-menu li > a:focus ::ng-deep svg path:nth-child(1) {
+  fill: #95ABB3;
+}
+:host ul.dropdown-menu li.active > a ::ng-deep svg path:nth-child(2), :host ul.dropdown-menu li > a:hover ::ng-deep svg path:nth-child(2), :host ul.dropdown-menu li > a:focus ::ng-deep svg path:nth-child(2) {
+  fill: #703B00;
+}
+:host ul.dropdown-menu li.active > a ::ng-deep svg path:nth-child(3), :host ul.dropdown-menu li > a:hover ::ng-deep svg path:nth-child(3), :host ul.dropdown-menu li > a:focus ::ng-deep svg path:nth-child(3) {
+  fill: #697D94;
+}
+:host ul.dropdown-menu li.deactive {
+  cursor: not-allowed;
+}
+:host ul.dropdown-menu li:focus {
+  outline: none;
+}

@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  min-height: 200;
+  padding: 0 0.75rem;
+  background-color: var(--calcite-color-foreground-1);
+  color: var(--calcite-color-text-2);
+}
+:host .heading {
+  margin-inline: 0px;
+  margin-block: 1.25rem 1rem;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+  font-weight: var(--calcite-font-weight-medium);
+}

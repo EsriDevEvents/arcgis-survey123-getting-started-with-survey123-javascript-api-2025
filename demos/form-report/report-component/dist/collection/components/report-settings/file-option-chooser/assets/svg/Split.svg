@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="42px" viewBox="0 0 36 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Split</title>
+    <g id="Data" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Report-File-options" transform="translate(-30.000000, -623.000000)">
+            <g id="Feature-Report" transform="translate(0.000000, 160.000000)">
+                <g id="Output-settings" transform="translate(20.000000, 355.000000)">
+                    <g id="File-options" transform="translate(0.000000, 29.000000)">
+                        <g id="Choic" transform="translate(0.000000, 69.000000)">
+                            <g id="Split" transform="translate(10.000000, 10.000000)">
+                                <path d="M26,0 L36,10 L36,36 L27,36 L27,35 L35,35 L35,11 L25,11 L25,1 L10,1 L10,6 L9,6 L9,0 L26,0 Z M26,1.415 L26,10 L34.586,10 L26,1.415 Z M17,6 L27,16 L27,42 L0,42 L0,6 L17,6 Z M1,7 L1,41 L26,41 L26,17 L16,17 L16,7 L1,7 Z M25.586,16 L17,7.415 L17,16 L25.586,16 Z" id="Shape" fill="#D8D8D8" fill-rule="nonzero"></path>
+                                <path d="M32,28 L32,29 L28,29 L28,28 L32,28 Z M32,24 L32,25 L28,25 L28,24 L32,24 Z M32,20 L32,21 L28,21 L28,20 L32,20 Z M32,16 L32,17 L28,17 L28,16 L32,16 Z M32,12 L32,13 L25,13 L24,12 L32,12 Z M24,8 L24,9 L21,9 L20,8 L24,8 Z M24,5 L24,4 L13,4 L13,5 L24,5 Z" id="Shape" fill="#C08208"></path>
+                                <path d="M23,34 L23,35 L4,35 L4,34 L23,34 Z M23,30 L23,31 L4,31 L4,30 L23,30 Z M23,26 L23,27 L4,27 L4,26 L23,26 Z M19,22 L19,23 L4,23 L4,22 L19,22 Z M23,18 L23,19 L4,19 L4,18 L23,18 Z M15,14 L15,15 L4,15 L4,14 L15,14 Z M15,10 L15,11 L4,11 L4,10 L15,10 Z" id="Report" fill="#BABDC9"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

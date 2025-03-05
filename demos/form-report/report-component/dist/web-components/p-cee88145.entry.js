@@ -1,0 +1,2 @@
+import{r as a,h as e,H as s}from"./p-13c60fff.js";const c=":host{display:block}";const t=c;const o=class{constructor(e){a(this,e)}render(){return e(s,{key:"8dd32e95bac32ab9c12ae6eaee29ea03a0547ba1"},e("slot",{key:"1602cc856944e18bb5a785b41757112fc3d48aae"}))}};o.style=t;export{o as credit_estimator};
+//# sourceMappingURL=p-cee88145.entry.js.map

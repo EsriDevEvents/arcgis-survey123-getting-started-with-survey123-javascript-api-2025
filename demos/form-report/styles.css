@@ -1,0 +1,29 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #31872e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#surveyContainer, #customThankYouContainer {
+    /* flex: 1; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+} 
+#customThankYouContainer{
+    display: none;
+}
+body{
+    margin: 0px;
+}

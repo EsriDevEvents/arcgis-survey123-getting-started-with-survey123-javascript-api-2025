@@ -1,0 +1,101 @@
+:host {
+  padding: 0 0.75rem;
+  display: block;
+}
+:host .clickable-text {
+  cursor: pointer;
+  font-weight: normal;
+}
+:host calcite-notice {
+  margin-top: 6px;
+}
+:host .credits-info {
+  margin: 10px 0 10px 0;
+  padding: 10px 0;
+  background-color: var(--calcite-color-foreground-3);
+  color: var(--calcite-color-text-2);
+  display: flex;
+  justify-content: space-between;
+}
+:host .credits-info > div {
+  margin: 0px 10px;
+}
+:host .credits-info .show-credits {
+  display: inline-flex;
+  align-items: center;
+}
+:host .credits-info .show-credits survey123-ui-spinner {
+  line-height: 0;
+}
+:host .credits-info .show-credits ::ng-deep span {
+  line-height: 0;
+}
+:host .credits-info .show-credits .icon-spin.icon-refresh {
+  top: 1px;
+}
+:host .credits-info .show-credits .spinner {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+:host .credits-info .show-credits span:not(.clickable-text) {
+  cursor: default;
+}
+:host .credits-info .show-credits span.clickable-text.disabled {
+  cursor: not-allowed;
+}
+:host .credits-info .credits-result-info {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+:host .credits-info .credits-result-info span {
+  word-break: break-word;
+}
+:host .pieview-info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+:host .pieview-info .has-spinner > span {
+  cursor: default;
+}
+:host .pieview-info .has-spinner > span.report-status {
+  padding: 0 2px;
+}
+:host .pieview-info .preview-text {
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+:host .pieview-info .preview-text > span {
+  cursor: pointer;
+}
+:host .pieview-info .preview-text.disabled {
+  text-decoration: underline solid #979797;
+  color: #979797;
+  cursor: not-allowed;
+}
+:host .pieview-info .preview-text.disabled > span {
+  cursor: not-allowed;
+}
+:host .execute-btn {
+  overflow: auto;
+  margin: -5px 0 30px 0;
+}
+:host .execute-btn > span {
+  line-height: 41px;
+}
+:host .execute-btn a {
+  float: inline-start;
+}
+:host .execute-btn a button {
+  width: auto;
+}
+:host .execute-btn.portal-btn {
+  margin: 20px 0;
+}
+:host calcite-loader {
+  display: inline-block;
+  margin: 0 0 0 10px;
+}

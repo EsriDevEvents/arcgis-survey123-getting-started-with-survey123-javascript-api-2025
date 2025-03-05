@@ -1,0 +1,217 @@
+:host {
+  --calcite-dropdown-width: 260px;
+  display: block;
+}
+:host * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:host p {
+  padding-top: 0;
+  margin: 0 0 10px;
+}
+:host .root {
+  border-radius: 2px;
+}
+:host .root .header {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+:host .root .header p {
+  word-break: break-word;
+}
+:host .root .header calcite-icon {
+  margin: 0 4px;
+  top: 4px;
+  position: relative;
+}
+:host .root .job-info {
+  position: relative;
+  padding: 10px;
+  border-radius: 2px;
+}
+:host .root .job-info.hasDetail {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+:host .root .job-info .status-icon {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+}
+:host .root .job-info .detail {
+  width: 100%;
+  padding-left: 24px;
+}
+:host .root .job-info .detail .header {
+  padding-right: 40px;
+  display: block;
+  word-break: break-word;
+}
+:host .root .job-info .detail .header ::ng-deep i {
+  display: inline;
+  position: relative;
+  top: 3px;
+}
+:host .root .job-info .detail .icon-area {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+:host .root .job-info .detail .icon-area a {
+  width: 16px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 5px;
+  color: var(--calcite-color-text-2);
+}
+:host .root .job-info .detail .icon-area a:last-child {
+  margin-right: 0;
+}
+:host .root .job-info .detail .icon-area a.isloading {
+  cursor: default;
+}
+:host .root .job-info .detail .icon-area a.isloading i {
+  cursor: default;
+}
+:host .root .job-info .detail .icon-area a.disabled {
+  cursor: not-allowed;
+}
+:host .root .job-info .detail .icon-area a.disabled i {
+  cursor: not-allowed;
+}
+:host .root .job-info .detail .icon-area a.disabled i ::ng-deep svg path {
+  fill-opacity: 0.6;
+}
+:host .root .job-info .detail .icon-area i {
+  cursor: pointer;
+}
+:host .root .job-info .detail .icon-area i.download-icon::ng-deep .spinner .icon-spin {
+  margin-left: 0;
+  margin-right: 0;
+}
+:host .root .job-info .detail .icon-area i.download-icon.spinner {
+  position: relative;
+  top: -2px;
+}
+:host .root .job-info .detail .icon-area i ::ng-deep i {
+  line-height: 0;
+}
+:host .root .job-info .detail .icon-area .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 224px;
+  margin-left: -12px;
+}
+:host .root .job-info .detail .icon-area .menu-item > a {
+  width: calc(100% - 60px);
+  text-align: left;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:host .root .job-info .detail .icon-area .menu-item > span {
+  right: 10px;
+}
+:host .root .job-info .detail .middle-line {
+  overflow: hidden;
+}
+:host .root .job-info .detail .middle-line .records {
+  width: 42%;
+  float: inline-start;
+}
+:host .root .job-info .detail .middle-line .startTime {
+  width: 55%;
+  float: inline-end;
+  text-align: right;
+}
+:host .root .job-info .detail .status {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+:host .root .job-info .detail .status > span {
+  width: 58%;
+  display: inline-block;
+}
+:host .root .job-info .detail .status a.job-detail-link {
+  width: 35%;
+  margin-left: 5%;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: right;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+:host .root .job-info .detail .status a.job-detail-link.job-detail-pending {
+  cursor: default;
+  text-decoration: none;
+}
+:host .root .job-info .detail .status a.job-detail-link.job-detail-pending i.icon-spin {
+  margin-left: 2px;
+}
+:host .root .job-info .detail .status a.job-detail-link.job-detail-pending i.icon-spin .spinner {
+  position: relative;
+  top: -7px;
+}
+:host .root .job-info .detail .confirm-delete-anchor, :host .root .job-info .detail .cancel-delete-anchor {
+  cursor: pointer;
+  text-decoration: underline;
+}
+:host .root .job-info .detail .cancel-delete-anchor {
+  margin-left: 20px;
+}
+:host .root .job-detail {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+  border-radius: 2px;
+}
+:host .root:hover .job-info .detail .icon-area {
+  display: block;
+}
+:host .root ::ng-deep .modal-body {
+  padding: 0;
+}
+
+:host-context([dir=rtl]) .job-info .status-icon {
+  left: unset !important;
+  right: 10px;
+}
+:host-context([dir=rtl]) .detail {
+  padding-right: 24px;
+  padding-left: unset !important;
+}
+:host-context([dir=rtl]) .detail .header {
+  padding-right: unset !important;
+  padding-left: 40px;
+}
+:host-context([dir=rtl]) .detail .icon-area {
+  left: 10px;
+  right: auto !important;
+}
+:host-context([dir=rtl]) .detail .icon-area a:last-child {
+  margin-left: 0;
+  margin-right: 5px;
+}
+:host-context([dir=rtl]) .detail .middle-line .startTime {
+  text-align: left;
+}
+:host-context([dir=rtl]) .detail .status a.job-detail-link {
+  margin-right: 5%;
+  margin-left: unset !important;
+}
+:host-context([dir=rtl]) .detail .status a.job-detail-link.job-detail-pending i.icon-spin {
+  margin-left: unset !important;
+  margin-right: 2px;
+}
+:host-context([dir=rtl]) .detail .cancel-delete-anchor {
+  margin-left: auto !important;
+  margin-right: 20px;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "survey123-animal-recognition",
+  "version": "1.0.0",
+  "description": "Survey123 Animal Recognition Demo",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "http-server -S -p 3000 -c-1 . -C ssl/certificate.crt -K ssl/private.key"
+  },
+  "keywords": [
+    "survey123",
+    "animal-recognition"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@arcgis-survey123/feature-report-components": "https://olympus.esri.com/artifactory/npm-arcgis-local/%40arcgis-survey123/feature-report-components/-/%40arcgis-survey123/feature-report-components-1.0.17.tgz"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}

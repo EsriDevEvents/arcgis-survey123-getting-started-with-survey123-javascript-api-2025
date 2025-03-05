@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+:host * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:host * {
+  font-size: 14px;
+}
+:host .banner {
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 60px;
+}
+:host .banner a {
+  cursor: pointer;
+  float: inline-start;
+  transform: rotateZ(180deg);
+  top: 16px;
+}
+:host .banner span {
+  float: inline-start;
+  padding-left: 10px;
+}
+:host .no-tasks {
+  margin-bottom: 20px;
+}
+:host .list {
+  height: calc(100% - 60px);
+  padding: 0 0.75rem;
+  overflow: auto;
+  width: 100%;
+}
+:host .list ul {
+  padding-left: 0;
+}
+:host .list ul li {
+  list-style: none;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+:host .list p.job-date {
+  color: #979797;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+
+:host-context([dir=rtl]) .banner a {
+  transform: none !important;
+}
+:host-context([dir=rtl]) .banner span {
+  padding-right: 10px;
+  padding-left: unset !important;
+}
+:host-context([dir=rtl]) list ul {
+  padding-right: 0;
+  padding-left: unset !important;
+}
