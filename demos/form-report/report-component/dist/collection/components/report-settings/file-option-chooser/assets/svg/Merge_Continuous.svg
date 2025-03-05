@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="42px" viewBox="0 0 36 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Merge (continuous)</title>
+    <g id="Data" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Report-File-options" transform="translate(-32.000000, -760.000000)">
+            <g id="Feature-Report" transform="translate(0.000000, 160.000000)">
+                <g id="Output-settings" transform="translate(20.000000, 355.000000)">
+                    <g id="File-options" transform="translate(0.000000, 29.000000)">
+                        <g id="Choic" transform="translate(0.000000, 69.000000)">
+                            <g id="Merge-(continuous)" transform="translate(12.000000, 147.000000)">
+                                <path d="M24,0 L34,10 L34,42 L2,42 L2,0 L24,0 Z M3,1 L3,41 L33,41 L33,11 L23,11 L23,1 L3,1 Z M32.586,10 L24,1.415 L24,10 L32.586,10 Z" id="Page" fill="#DDDDDD" fill-rule="nonzero"></path>
+                                <path d="M30,36 L30,37 L6,37 L6,36 L30,36 Z M30,32 L30,33 L6,33 L6,32 L30,32 Z M24,28 L24,29 L6,29 L6,28 L24,28 Z M30,24 L30,25 L6,25 L6,24 L30,24 Z M30,20 L30,21 L6,21 L6,20 L30,20 Z M6,14 L9,16.5 L6,19 L6,14 Z M30,16 L30,17 L10,17 L10,16 L30,16 Z" id="Report" fill="#C08208"></path>
+                                <path d="M30,12 L30,13 L6,13 L6,12 L30,12 Z M22,8 L22,9 L6,9 L6,8 L22,8 Z M22,4 L22,5 L6,5 L6,4 L22,4 Z" id="Report" fill="#BABDC9"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

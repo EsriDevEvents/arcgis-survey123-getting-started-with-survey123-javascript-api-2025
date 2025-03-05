@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+:host .helper {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+:host .helper div {
+  width: 9999px;
+}
+:host .helper span {
+  padding: 8px;
+}
+:host .error-table-outter {
+  width: 100%;
+  overflow: auto;
+}
+:host .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+:host .table > thead > tr > th,
+:host .table > tbody > tr > th,
+:host .table > tfoot > tr > th,
+:host .table > thead > tr > td,
+:host .table > tbody > tr > td,
+:host .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+:host .table-bordered > thead > tr > th,
+:host .table-bordered > tbody > tr > th,
+:host .table-bordered > tfoot > tr > th,
+:host .table-bordered > thead > tr > td,
+:host .table-bordered > tbody > tr > td,
+:host .table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+:host .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+:host .table-bordered {
+  border: 1px solid #ddd;
+}
+:host .error-table {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+:host .error-table .objectId-td {
+  width: 120px;
+  max-width: 254px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+:host .error-table .message {
+  max-width: 560px;
+  overflow: auto;
+  word-wrap: break-word;
+}

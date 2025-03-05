@@ -1,0 +1,27 @@
+{
+  "entries": [
+    "components/credit-estimator/credit-estimator.js",
+    "components/feature-report/feature-report.js",
+    "components/features-preview/features-preview.js",
+    "components/report-base/report-base.js",
+    "components/report-generator/report-generator.js",
+    "components/report-settings/report-settings.js",
+    "components/report-settings/file-option-chooser/file-option-chooser.js",
+    "components/sample-report-generator/sample-report-generator.js",
+    "components/task-list/task-list.js",
+    "components/task-list/detail-table/detail-table.js",
+    "components/task-list/detail-table/error-detail-modal/error-detail-modal.js",
+    "components/task-list/detail-table/success-detail-modal/success-detail-modal.js",
+    "components/task-list/task-info/task-info.js",
+    "components/template-chooser/template-chooser.js",
+    "components/ui/report-icon/report-icon.js",
+    "components/view-report-link/view-report-link.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.19.2",
+    "typescriptVersion": "5.4.5"
+  },
+  "collections": [],
+  "bundles": []
+}

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  padding: 0 0.75rem;
+}
+:host .heading {
+  margin-inline: 0px;
+  margin-block: 1.25rem 1rem;
+  font-size: var(--calcite-font-size-0);
+  line-height: 1.25rem;
+  font-weight: var(--calcite-font-weight-medium);
+}
+:host .folder-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+:host .conflict-name-setting {
+  padding-block: 0.5rem;
+  padding-inline: 0.75rem;
+  font-size: var(--calcite-font-size--1);
+  line-height: 1rem;
+}

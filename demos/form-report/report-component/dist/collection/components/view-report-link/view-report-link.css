@@ -1,0 +1,37 @@
+:host {
+  padding: 0 0.75rem;
+}
+:host div.banner {
+  display: block;
+  cursor: pointer;
+  /* padding: 0 20px; */
+  /* font-weight: 700; */
+  line-height: 60px;
+}
+:host .task-num {
+  display: inline-block;
+  height: 16px;
+  text-align: center;
+  border-radius: 16px;
+  border-color: #31872E;
+  background-color: #31872E;
+  margin-left: 4px;
+  color: #ffffff;
+  line-height: 16px !important;
+  transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+:host .task-num span {
+  position: relative;
+  line-height: 1 !important;
+  color: #ffffff;
+  padding: 1px 4px;
+}
+:host .task-num.active {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+:host-context([dir=rtl]) .task-num {
+  margin-left: unset !important;
+  margin-right: 4px;
+}

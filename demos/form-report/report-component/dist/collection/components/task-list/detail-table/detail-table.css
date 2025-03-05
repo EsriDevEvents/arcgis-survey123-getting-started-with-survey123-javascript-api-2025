@@ -1,0 +1,66 @@
+:host {
+  display: block;
+}
+:host calcite-table {
+  width: 100%;
+}
+:host calcite-table-cell .max-tow-lines {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 40px;
+  margin-bottom: 5px;
+}
+:host calcite-table-cell .more-details {
+  margin-bottom: 0px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+:host table {
+  width: 100%;
+  margin-bottom: 0px;
+}
+:host table tr {
+  border-top: 1px solid #EFF0F5;
+}
+:host table tr:nth-child(2n+1) {
+  background-color: #F9FBFE;
+}
+:host table tr td {
+  border: none;
+  padding: 6px 5px;
+}
+:host table tr td > div {
+  word-wrap: break-word;
+}
+:host table tr td .max-tow-lines {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 40px;
+  margin-bottom: 5px;
+}
+:host table tr td .more-details {
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+:host table tr td:first-child {
+  padding-left: 30px;
+  max-width: 120px;
+  vertical-align: top;
+}
+:host table tr td a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:host-context([dir=rtl]) table tr td:first-child {
+  padding-right: 30px;
+  padding-left: unset !important;
+}
