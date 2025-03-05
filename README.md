@@ -24,4 +24,5 @@ Most of the slides are made available at [Esri Events > Proceedings](https://www
    - For demo2, you will need to enter your token to generate a report.
    - For demo5 and demo6, please add your OpenAI API key in the config.js file for proper functionality.
 
-## Or you can view the demo on CodePen: https://codepen.io/collection/JYYBRd
+## Or you can view the demo on CodePen: 
+- https://codepen.io/collection/JYYBRd
