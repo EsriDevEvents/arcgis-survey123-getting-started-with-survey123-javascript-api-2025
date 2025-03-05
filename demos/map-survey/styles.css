@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.left{
+    flex: 1;
+}
+#mapContainer {
+    flex: 1;
+    height: 100%;
+}
+
+#surveyContainer {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#todoListContainer{
+    margin: 10px;
+}
+/* To-Do List Styles */
+#todoList {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+#todoList li {
+    padding: 5px; /* Add padding */
+    border: 1px solid #ddd; /* Add border */
+    border-radius: 4px; /* Round corners */
+    margin-bottom: 5px; /* Space between items */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#todoList li:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+#todoList li.checked {
+    text-decoration: line-through; /* Strike-through text */
+    color: gray; /* Change text color */
+    background-color: #e0e0e0; /* Change background color for checked items */
+}
+
+#todoList li.highlighted {
+    background-color: #ffc107; /* Highlight color for selected items */
+    font-weight: bold; /* Make text bold */
+}
+
+#todoList li.deleted {
+    display: none; /* Hide deleted items */
+} 
