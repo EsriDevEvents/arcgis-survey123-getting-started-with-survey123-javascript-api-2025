@@ -3,13 +3,13 @@ import Map from "https://js.arcgis.com/4.28/@arcgis/core/Map.js";
 import MapView from "https://js.arcgis.com/4.28/@arcgis/core/views/MapView.js";
 import GraphicsLayer from "https://js.arcgis.com/4.28/@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "https://js.arcgis.com/4.28/@arcgis/core/Graphic.js";
+import { CONFIG } from '../../config.js';
 
 // Survey configuration
 const SURVEY_CONFIG = {
     itemId: "d4d1f2b6738d4a739d7d82c0fe077e53",
-    clientId: 'vy3vxiEn4OmoBqQW',
-    portalUrl: 'https://www.arcgis.com',
-    token: '3NKHt6i2urmWtqOuugvr9WWH4yiFOV2GBtoX0t7v7RQTILUn0Ehm16rl4o6NYokAqofeej5gqZwCY1LxRj9e8no8MMoA2l0UyCmmzdZy7uoB9eNfadU71LYtY_BJvrZ_TugYKLBVF7Pz9uCRNoyqflJolE5QtffDBMgACz7EXtDiouyI-8kQurDACs3MKv-xQwRwuFLL9zMRnYEZW-EVQocoTJUrEqG3RMXPh4HuA44.',
+    clientId: CONFIG.survey123.clientId,
+    portalUrl: 'https://www.arcgis.com'
 };
 
 const highlightColor = 'rgba(255, 193, 7, 1)';
@@ -19,22 +19,6 @@ const SYMBOLS = {
     highlightSymbol: createSymbol(highlightColor),  // Yellow color
     checkedSymbol: createSymbol([0, 255, 0])  // Green color
 };
-
-function createSymbol(color) {
-    return {
-        type: "simple-marker",
-        color: color,
-        size: "14px",
-        outline: {
-            color: [255, 255, 255],
-            width: 2
-        },
-        shadowColor: [0, 0, 0, 0.4],
-        shadowBlur: 3,
-        shadowOffsetX: 2,
-        shadowOffsetY: 2
-    };
-}
 
 const landmarks = getLandmarks();
 
@@ -221,4 +205,20 @@ function resetTodoListStyle() {
     document.querySelectorAll("#todoList > li").forEach((li) => {
         li.classList.remove('highlighted');
     });
+}
+
+function createSymbol(color) {
+    return {
+        type: "simple-marker",
+        color: color,
+        size: "14px",
+        outline: {
+            color: [255, 255, 255],
+            width: 2
+        },
+        shadowColor: [0, 0, 0, 0.4],
+        shadowBlur: 3,
+        shadowOffsetX: 2,
+        shadowOffsetY: 2
+    };
 }

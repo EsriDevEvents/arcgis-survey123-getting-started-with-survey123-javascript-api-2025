@@ -2,7 +2,7 @@
 export const CONFIG = {
     // OpenAI Configuration
     openai: {
-        apiKey:'',
+        apiKey:'{{your openai api key}}',
         endpoints: {
             audio: 'https://api.openai.com/v1/audio/transcriptions',
             chat: 'https://api.openai.com/v1/chat/completions',
@@ -12,7 +12,7 @@ export const CONFIG = {
 
     // Survey123 Configuration
     survey123: {
-        clientId: 'vy3vxiEn4OmoBqQW'
+        clientId: '{{your-client-id}}'
     }
 
 }; 

@@ -1,7 +1,7 @@
 {
-  "name": "survey123-animal-recognition",
+  "name": "arcgis-survey123-getting-started-with-survey123-javascript-api-2025",
   "version": "1.0.0",
-  "description": "Survey123 Animal Recognition Demo",
+  "description": "Demos of how to use Survey123 javascript API to customize your app.",
   "main": "app.js",
   "type": "module",
   "scripts": {
@@ -9,13 +9,10 @@
   },
   "keywords": [
     "survey123",
-    "animal-recognition"
+    "javascript API"
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@arcgis-survey123/feature-report-components": "https://olympus.esri.com/artifactory/npm-arcgis-local/%40arcgis-survey123/feature-report-components/-/%40arcgis-survey123/feature-report-components-1.0.17.tgz"
-  },
   "devDependencies": {
     "http-server": "^0.12.3"
   }

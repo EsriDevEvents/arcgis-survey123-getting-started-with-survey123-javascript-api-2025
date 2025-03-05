@@ -1,4 +1,5 @@
 import { defineCustomElements } from './report-component/loader/index.js';
+import { CONFIG } from '../../config.js';
 
 // Initialize custom elements
 defineCustomElements(window, {
@@ -9,10 +10,10 @@ defineCustomElements(window, {
 const SURVEY_CONFIG = {
     itemId: "d4d1f2b6738d4a739d7d82c0fe077e53",
     templateItemId:'7168f7ab886a40afa1f2a7846bbc3b60',
-    clientId: 'vy3vxiEn4OmoBqQW',
+    clientId: CONFIG.survey123.clientId,
     portalUrl: 'https://www.arcgis.com',
     featureLayerUrl: 'https://services1.arcgis.com/oC086ufSSQ6Avnw2/arcgis/rest/services/survey123_d4d1f2b6738d4a739d7d82c0fe077e53_results/FeatureServer/0',
-    token: '3NKHt6i2urmWtqOuugvr9Sc6sAUdgyqMUNfIsWNc1D20fSCKBMYvLSBo3KglJFvmERYj5fYWk29AA4JraEG0T4eTiMllmUXe_mxQlwlxSf0qn6UWcea3v96NMCAcpY8uVZPXvRH708xoQmSKTVe3-ImwYmZRS9v4_2PQe8xAJonFL0gO5loxWeoMKEbyKba0m0pHicaefy7q_BnzwkyCLmQT0WLujdi8P9jvbR1Qk7E.'
+    token: '{{your-token}}'
 }
 // Create feature report component
 function createReportComponent(objectid) {
@@ -30,7 +31,7 @@ function createReportComponent(objectid) {
 function getReportAttributes(objectid) {
     return {
         'token': SURVEY_CONFIG.token,
-        'client-id': 'vy3vxiEn4OmoBqQW',
+        'client-id': SURVEY_CONFIG.clientId,
         'portal-url': SURVEY_CONFIG.portalUrl,
         'feature-layer-url': SURVEY_CONFIG.featureLayerUrl,
         'survey-item-id': SURVEY_CONFIG.itemId,

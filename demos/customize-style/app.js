@@ -1,7 +1,9 @@
+import { CONFIG } from '../../config.js';
+
 // Survey configuration
 const SURVEY_CONFIG = {
     itemId: "d4d1f2b6738d4a739d7d82c0fe077e53",
-    clientId: 'vy3vxiEn4OmoBqQW',
+    clientId: CONFIG.survey123.clientId,
     portalUrl: 'https://www.arcgis.com'
 };
 

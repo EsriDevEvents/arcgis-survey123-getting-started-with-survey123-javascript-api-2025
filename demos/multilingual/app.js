@@ -11,7 +11,7 @@ const LANGUAGES = [
 const webform = new Survey123WebForm({
     container: 'surveyContainer',
     itemId: "d4d1f2b6738d4a739d7d82c0fe077e53",
-    clientId: 'vy3vxiEn4OmoBqQW',
+    clientId: CONFIG.survey123.clientId,
     portalUrl: 'https://www.arcgis.com',
     version: 'latest',
     onFormLoaded: (data) => {

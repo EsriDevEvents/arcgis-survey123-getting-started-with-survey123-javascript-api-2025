@@ -14,4 +14,14 @@ Most of the slides are made available at [Esri Events > Proceedings](https://www
 - [Help documentation](https://developers.arcgis.com/survey123/api-reference/web-app/)
 - [codePen examples](https://codepen.io/survey123/collections/)
 
+## How to Run the Demos
+- Clone the repository.
+- Run `npm install` in the root directory of the repository.
+- Move your certificate.crt and private.key files to the ssl folder (required for https).
+- Verify that you have the correct ClientId for your hosting environment.
+- Execute `npm start` to launch the demo and visit https://{{your-host}}:3000/.
+- [Optional]
+   - For demo2, you will need to enter your token to generate a report.
+   - For demo5 and demo6, please add your OpenAI API key in the config.js file for proper functionality.
 
+## Or you can view the demo on CodePen: https://codepen.io/collection/JYYBRd
