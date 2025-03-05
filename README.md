@@ -17,12 +17,12 @@ Most of the slides are made available at [Esri Events > Proceedings](https://www
 ## How to Run the Demos
 - Clone the repository.
 - Run `npm install` in the root directory of the repository.
-- Move your certificate.crt and private.key files to the ssl folder (required for https).
-- Verify that you have the correct ClientId for your hosting environment.
+- Move your `certificate.crt` and `private.key` files to the `ssl` folder (required for HTTPS).
+- Ensure that you have the correct Client ID for your hosting environment.
 - Execute `npm start` to launch the demo and visit https://{{your-host}}:3000/.
-- [Optional]
+- Optional:
    - For demo2, you will need to enter your token to generate a report.
-   - For demo5 and demo6, please add your OpenAI API key in the config.js file for proper functionality.
+   - For demo5 and demo6, please add your OpenAI API key in the `config.js` file for proper functionality.
 
-## Or you can view the demo on CodePen: 
+## Alternatively, you can view the demo on CodePen (the optional configurations mentioned above are also required to run demo2, demo5, and demo6)
 - https://codepen.io/collection/JYYBRd
