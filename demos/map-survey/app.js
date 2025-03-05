@@ -28,7 +28,6 @@ const mapView = initializeMap();
 
 // Initialize Survey123 WebForm
 let webform = initializeWebForm();
-
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the To-Do List
     addLandmarksToTodoList(landmarks);
