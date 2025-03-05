@@ -1,9 +1,12 @@
-import { defineCustomElements } from './report-component/loader/index.js';
+// import { defineCustomElements } from './report-component/loader/index.js';
+
+import { defineCustomElements } from 'https://cdn.jsdelivr.net/gh/EsriDevEvents/arcgis-survey123-getting-started-with-survey123-javascript-api-2025@main/demos/form-report/report-component/loader/index.js';
 import { CONFIG } from '../../config.js';
 
 // Initialize custom elements
 defineCustomElements(window, {
-    resourcesUrl: './report-component/dist/'
+    // resourcesUrl: './report-component/dist/'
+    resourcesUrl: 'https://cdn.jsdelivr.net/gh/EsriDevEvents/arcgis-survey123-getting-started-with-survey123-javascript-api-2025@main/demos/form-report/report-component/dist/'
 });
 
 // Survey configuration constants
