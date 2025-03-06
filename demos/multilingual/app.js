@@ -21,9 +21,6 @@ const webform = new Survey123WebForm({
     clientId: CONFIG.survey123.clientId,
     portalUrl: 'https://www.arcgis.com',
     version: 'latest',
-    onFormLoaded: (data) => {
-        createLanguageSelector();
-    },
     onFormResized: (data) => {
         resizeWebform(data.contentHeight);
     }
@@ -132,24 +129,4 @@ function resizeWebform(height) {
     if (webformIframe && height > 0) {
         webformIframe.style.height = height + 'px';
     }
-}
-
-// Create language selector
-function createLanguageSelector() {
-    const selector = document.createElement('select');
-    selector.id = 'languageSelector';
-    selector.className = 'language-selector';
-
-    LANGUAGES.forEach(lang => {
-        const option = document.createElement('option');
-        option.value = lang.code;
-        option.textContent = lang.name;
-        selector.appendChild(option);
-    });
-
-    selector.addEventListener('change', (e) => {
-        webform.setLanguage(e.target.value);
-    });
-
-    document.querySelector('.controls').appendChild(selector);
 }

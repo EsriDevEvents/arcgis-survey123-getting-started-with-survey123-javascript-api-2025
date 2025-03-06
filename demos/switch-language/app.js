@@ -19,19 +19,11 @@ const webform = new Survey123WebForm({
     itemId: SURVEY_CONFIG.itemId,
     clientId: SURVEY_CONFIG.clientId,
     portalUrl: SURVEY_CONFIG.portalUrl,
-    onFormLoaded: handleFormLoaded,
+    onFormLoaded: createLanguageSelector,
     onFormResized: (data) => {
-        console.log('Form resized', data);
         resizeWebform(data.contentHeight);
     }
 });
-
-// Handle form loaded event
-function handleFormLoaded(data) {
-    console.log('Form loaded:', data);
-    createLanguageSelector();
-    resizeWebform(data.contentHeight);
-}
 
 // Create language selector
 function createLanguageSelector() {
