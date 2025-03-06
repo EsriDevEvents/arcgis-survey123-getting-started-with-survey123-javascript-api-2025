@@ -7,22 +7,7 @@ const SURVEY_CONFIG = {
     portalUrl: 'https://www.arcgis.com'
 };
 
-// Initialize Survey123 WebForm
-const webform = new Survey123WebForm({
-    container: 'surveyContainer',
-    itemId: SURVEY_CONFIG.itemId,
-    clientId: SURVEY_CONFIG.clientId,
-    portalUrl: SURVEY_CONFIG.portalUrl,
-    hideElements: ['navbar'],
-    onFormLoaded: handleFormLoaded,
-    onFormResized: (data) => {
-        console.log('Form resized', data);
-        resizeWebform(data.contentHeight);
-    }
-});
-
-
-// Get background color based on satisfaction value
+// color based on severity value
 const colors = {
     Minor: '#4CAF50', // Green
     Moderate: '#8BC34A', // Light Green
@@ -32,43 +17,40 @@ const colors = {
     default: '#31872e' // Default color
 };
 
-// Event listener for question value changes
-webform.on("questionValueChanged", handleQuestionValueChange);
-
-// Handle question value change event
-async function handleQuestionValueChange(event) {
-    if (event.field === 'severity_of_the_wildfire') {
-        const satisfactionValue = await getSatisfactionValue();
-        updateWebformTheme(satisfactionValue);
+// Initialize Survey123 WebForm
+const webform = new Survey123WebForm({
+    container: 'surveyContainer',
+    itemId: SURVEY_CONFIG.itemId,
+    clientId: SURVEY_CONFIG.clientId,
+    portalUrl: SURVEY_CONFIG.portalUrl,
+    hideElements: ['navbar'],
+    onFormLoaded: changeLikertStyle,
+    onFormResized: (data) => {
+        resizeWebform(data.contentHeight);
     }
+});
+
+// Change likert question style on form loaded
+function changeLikertStyle() {
+    const styles = createStyleObject();
+    webform.setStyle(styles);
 }
 
-// Retrieve the current satisfaction value
-async function getSatisfactionValue() {
-    const values = await webform.getQuestionValue();
-    return values['severity_of_the_wildfire'];
-}
+// Event listener for question value changes
+webform.on("questionValueChanged", async (event) => {
+    if (event.field === 'severity_of_the_wildfire') {
+        const values = await webform.getQuestionValue();
+        const severityValue = values['severity_of_the_wildfire'];
 
-// Update the webform theme based on satisfaction value
-function updateWebformTheme(satisfactionValue) {
-    const backgroundColor = getBackgroundColor(satisfactionValue);
-    webform.setTheme({
-        webpage: {
-            backgroundColor: backgroundColor
-        }
-    });
-}
-
-function getBackgroundColor(satisfactionValue) {
-    return colors[satisfactionValue];
-}
-
-// Handle form loaded event
-function handleFormLoaded(data) {
-    console.log('Form loaded:', data);
-    resizeWebform(data.contentHeight);
-    changeFormStyle();
-}
+        // Update the webform theme based on severity value
+        const backgroundColor = colors[severityValue];
+        webform.setTheme({
+            webpage: {
+                backgroundColor: backgroundColor
+            }
+        });
+    }
+})
 
 // Resize webform container
 function resizeWebform(height) {
@@ -78,14 +60,8 @@ function resizeWebform(height) {
     }
 }
 
-// Change form style based on satisfaction levels
-function changeFormStyle() {
-    const styles = createStyleObject(colors);
-    webform.setStyle(styles);
-}
-
 // Create style object for webform
-function createStyleObject(colors) {
+function createStyleObject() {
     const styles = {};
     for (const [index, [key, value]] of Object.entries(colors).entries()) {
         styles[`& .or-appearance-likert > fieldset > div.option-wrapper > label:nth-child(${index + 1}) > i.webform-svg-icon.background > svg > g > path`] = {
