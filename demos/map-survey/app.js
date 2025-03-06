@@ -20,31 +20,53 @@ const SYMBOLS = {
     checkedSymbol: createSymbol([0, 255, 0])  // Green color
 };
 
-const landmarks = getLandmarks();
+const landmarks = [
+    { "name": "Palisades", "latitude": 34.05, "longitude": -118.53 },
+    { "name": "Kenneth", "latitude": 34.29, "longitude": -118.70 },
+    { "name": "Hughes", "latitude": 34.50, "longitude": -118.62 },
+    { "name": "Hearst", "latitude": 34.20, "longitude": -118.60 },
+    { "name": "Sunset", "latitude": 34.09, "longitude": -118.41 },
+    { "name": "Altadena", "latitude": 34.19, "longitude": -118.13 },
+    { "name": "Hollywood Hills", "latitude": 34.12, "longitude": -118.32 }
+];
 
 // Initialize map and view
 const graphicsLayer = new GraphicsLayer();
 const mapView = initializeMap();
 
 // Initialize Survey123 WebForm
-let webform = initializeWebForm();
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the To-Do List
-    addLandmarksToTodoList(landmarks);
-
+let webform = new Survey123WebForm({
+    container: 'surveyContainer',
+    itemId: SURVEY_CONFIG.itemId,
+    clientId: SURVEY_CONFIG.clientId,
+    portalUrl: SURVEY_CONFIG.portalUrl,
+    hideElements: ['navbar', 'description'],
+    token: SURVEY_CONFIG.token,
+    version: 'latest',
+    onFormSubmitted: handleFormSubmit,
+    onFormResized: (data) => {
+        console.log('Form resized', data);
+        resizeWebform(data.contentHeight);
+    }
 });
 
-// Handle map click events
-mapView.on("click", (event) => {
-    mapView.hitTest(event).then((response) => {
-        if (response.results.length) {
-            handleMapClick(response.results[0].graphic);
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the To-Do List and handle click event
+    initializeTodoList(landmarks);
+
+    // Handle map click events
+    mapView.on("click", (event) => {
+        mapView.hitTest(event).then((response) => {
+            if (response.results.length) {
+                handleMapClick(response.results[0].graphic);
+            }
+        });
     });
 });
 
-// Function to add landmarks to the To-Do List
-function addLandmarksToTodoList(landmarks) {
+
+// Function to add landmarks to the To-Do List and bind click event
+function initializeTodoList(landmarks) {
     const todoList = document.getElementById('todoList');
     landmarks.forEach(landmark => {
         const listItem = document.createElement('li');
@@ -56,6 +78,45 @@ function addLandmarksToTodoList(landmarks) {
     });
 }
 
+
+function initializeMap() {
+    const map = new Map({
+        basemap: "streets-vector"
+    });
+    const view = new MapView({
+        container: "mapContainer",
+        map: map,
+        zoom: 8,
+        center: [-118.38907253265381, 34.27594653015247]
+    });
+    map.add(graphicsLayer);
+
+    addLandmarksToMap(landmarks, graphicsLayer);
+
+    return view;
+}
+
+// Adds landmarks to the map using the provided graphics layer.
+function addLandmarksToMap(landmarks, graphicsLayer) {
+    landmarks.forEach((landmark) => {
+        const point = {
+            type: "point",
+            longitude: landmark.longitude,
+            latitude: landmark.latitude
+        };
+
+        const pointGraphic = new Graphic({
+            geometry: point,
+            symbol: SYMBOLS.defaultSymbol,
+            attributes: { name: landmark.name }
+        });
+
+        graphicsLayer.add(pointGraphic);
+    });
+
+}
+
+// Highlights the selected To-Do item and triggers a map click if specified.
 function highlightTodoItem(item, trigerMapClick) {
     resetTodoListStyle();
     item.classList.add('highlighted'); // Add highlighted class
@@ -73,6 +134,7 @@ function highlightTodoItem(item, trigerMapClick) {
     }
 }
 
+// Handles the map click event and updates the survey form accordingly.
 function handleMapClick(feature, fromTodoList) {
     resetGraphicsStyle();
     if (feature.symbol?.color.toString() != 'rgba(0, 255, 0, 1)') {
@@ -95,6 +157,7 @@ function handleMapClick(feature, fromTodoList) {
     }
 }
 
+// Resets the styles of all graphics on the map.
 function resetGraphicsStyle() {
     graphicsLayer.graphics.forEach(g => {
         if (g.symbol.color.toString() == highlightColor && g.symbol.color.toString() != 'rgba(0, 255, 0, 1)') {
@@ -103,6 +166,14 @@ function resetGraphicsStyle() {
     });
 }
 
+// Resets the styles of the To-Do list items.
+function resetTodoListStyle() {
+    document.querySelectorAll("#todoList > li").forEach((li) => {
+        li.classList.remove('highlighted');
+    });
+}
+
+// Handles the form submission and updates the graphics and To-Do list accordingly.
 function handleFormSubmit(event) {
     const landmarkName = event.surveyFeatureSet.features[0].attributes['location_name'];
     graphicsLayer.graphics.forEach((item) => {
@@ -123,77 +194,7 @@ function handleFormSubmit(event) {
     webform = initializeWebForm();
 }
 
-function initializeMap() {
-    const map = new Map({
-        basemap: "streets-vector"
-    });
-    const view = createMapView(map);
-    map.add(graphicsLayer);
-
-    addLandmarksToMap(landmarks, graphicsLayer);
-
-    return view;
-}
-
-function createMapView(map) {
-    return new MapView({
-        container: "mapContainer",
-        map: map,
-        zoom: 8,
-        center: [-118.38907253265381, 34.27594653015247]
-    });
-}
-
-function getLandmarks() {
-    return [
-        { "name": "Palisades", "latitude": 34.05, "longitude": -118.53 },
-        { "name": "Kenneth", "latitude": 34.29, "longitude": -118.70 },
-        { "name": "Hughes", "latitude": 34.50, "longitude": -118.62 },
-        { "name": "Hearst", "latitude": 34.20, "longitude": -118.60 },
-        { "name": "Sunset", "latitude": 34.09, "longitude": -118.41 },
-        { "name": "Altadena", "latitude": 34.19, "longitude": -118.13 },
-        { "name": "Hollywood Hills", "latitude": 34.12, "longitude": -118.32 }
-    ];
-}
-
-function addLandmarksToMap(landmarks, graphicsLayer) {
-    landmarks.forEach((landmark) => {
-        const point = {
-            type: "point",
-            longitude: landmark.longitude,
-            latitude: landmark.latitude
-        };
-
-        const pointGraphic = new Graphic({
-            geometry: point,
-            symbol: SYMBOLS.defaultSymbol,
-            attributes: { name: landmark.name }
-        });
-
-        graphicsLayer.add(pointGraphic);
-    });
-
-}
-
-function initializeWebForm() {
-    return new Survey123WebForm({
-        container: 'surveyContainer',
-        itemId: SURVEY_CONFIG.itemId,
-        clientId: SURVEY_CONFIG.clientId,
-        portalUrl: SURVEY_CONFIG.portalUrl,
-        hideElements: ['navbar', 'description'],
-        token: SURVEY_CONFIG.token,
-        version: 'latest',
-        onFormSubmitted: handleFormSubmit,
-        onFormResized: (data) => {
-            console.log('Form resized', data);
-            resizeWebform(data.contentHeight);
-        }
-    });
-}
-
-
-// Resize webform container height after form loaded or resized  
+// Resizes the webform container height after the form is loaded or resized.
 function resizeWebform(height) {
     const webformIframe = document.querySelector('#surveyContainer>iframe');
     if (webformIframe && height > 0) {
@@ -201,12 +202,7 @@ function resizeWebform(height) {
     }
 }
 
-function resetTodoListStyle() {
-    document.querySelectorAll("#todoList > li").forEach((li) => {
-        li.classList.remove('highlighted');
-    });
-}
-
+// Creates a symbol with the specified color for map graphics.
 function createSymbol(color) {
     return {
         type: "simple-marker",
