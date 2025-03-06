@@ -35,20 +35,7 @@ const graphicsLayer = new GraphicsLayer();
 const mapView = initializeMap();
 
 // Initialize Survey123 WebForm
-let webform = new Survey123WebForm({
-    container: 'surveyContainer',
-    itemId: SURVEY_CONFIG.itemId,
-    clientId: SURVEY_CONFIG.clientId,
-    portalUrl: SURVEY_CONFIG.portalUrl,
-    hideElements: ['navbar', 'description'],
-    token: SURVEY_CONFIG.token,
-    version: 'latest',
-    onFormSubmitted: handleFormSubmit,
-    onFormResized: (data) => {
-        console.log('Form resized', data);
-        resizeWebform(data.contentHeight);
-    }
-});
+let webform = initializeWebForm();
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the To-Do List and handle click event
@@ -217,4 +204,22 @@ function createSymbol(color) {
         shadowOffsetX: 2,
         shadowOffsetY: 2
     };
+}
+
+function initializeWebForm(){
+    return new Survey123WebForm({
+        container: 'surveyContainer',
+        itemId: SURVEY_CONFIG.itemId,
+        clientId: SURVEY_CONFIG.clientId,
+        portalUrl: SURVEY_CONFIG.portalUrl,
+        hideElements: ['navbar', 'description'],
+        token: SURVEY_CONFIG.token,
+        version: 'latest',
+        onFormSubmitted: handleFormSubmit,
+        onFormResized: (data) => {
+            console.log('Form resized', data);
+            resizeWebform(data.contentHeight);
+        }
+    });
+
 }

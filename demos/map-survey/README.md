@@ -1,6 +1,6 @@
 ## Introduction
 
-This example demonstrates how to conduct surveys on a map using the Survey123 JS API. The survey in this example is designed to collect information related to wildfires in California. Upon entering the application, users are required to complete a series of survey tasks for the specified locations.
+The survey in this example is designed to collect information related to wildfires in California. Upon entering the application, users are required to complete a series of survey tasks for the specified locations.
 
 
 ## Using the Survey123 JS API
