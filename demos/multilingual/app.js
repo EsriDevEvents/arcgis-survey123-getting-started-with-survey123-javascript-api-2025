@@ -1,12 +1,5 @@
 import { CONFIG } from '../../config.js';
 
-// Language options
-const LANGUAGES = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-    { code: 'zh-cn', name: '简体中文' }
-];
-
 // OpenAI API configuration
 const OPENAI_CONFIG = {
     apiKey: CONFIG.openai.apiKey,
