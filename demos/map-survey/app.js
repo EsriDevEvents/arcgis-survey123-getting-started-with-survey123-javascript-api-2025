@@ -51,6 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function initializeWebForm(){
+    return new Survey123WebForm({
+        container: 'surveyContainer',
+        itemId: SURVEY_CONFIG.itemId,
+        clientId: SURVEY_CONFIG.clientId,
+        portalUrl: SURVEY_CONFIG.portalUrl,
+        hideElements: ['navbar', 'description'],
+        token: SURVEY_CONFIG.token,
+        version: 'latest',
+        onFormSubmitted: handleFormSubmit,
+        onFormResized: (data) => {
+            resizeWebform(data.contentHeight);
+        }
+    });
+
+}
 
 // Function to add landmarks to the To-Do List and bind click event
 function initializeTodoList(landmarks) {
@@ -61,7 +77,7 @@ function initializeTodoList(landmarks) {
         listItem.addEventListener('click', () => {
             highlightTodoItem(listItem, true);
         });
-        todoList.appendChild(listItem);
+        todoList?.appendChild(listItem);
     });
 }
 
@@ -106,7 +122,7 @@ function addLandmarksToMap(landmarks, graphicsLayer) {
 // Highlights the selected To-Do item and triggers a map click if specified.
 function highlightTodoItem(item, trigerMapClick) {
     resetTodoListStyle();
-    item.classList.add('highlighted'); // Add highlighted class
+    item?.classList.add('highlighted'); // Add highlighted class
     if (trigerMapClick) {
         let graphic = null;
         graphicsLayer.graphics.forEach((g) => {
@@ -206,20 +222,3 @@ function createSymbol(color) {
     };
 }
 
-function initializeWebForm(){
-    return new Survey123WebForm({
-        container: 'surveyContainer',
-        itemId: SURVEY_CONFIG.itemId,
-        clientId: SURVEY_CONFIG.clientId,
-        portalUrl: SURVEY_CONFIG.portalUrl,
-        hideElements: ['navbar', 'description'],
-        token: SURVEY_CONFIG.token,
-        version: 'latest',
-        onFormSubmitted: handleFormSubmit,
-        onFormResized: (data) => {
-            console.log('Form resized', data);
-            resizeWebform(data.contentHeight);
-        }
-    });
-
-}

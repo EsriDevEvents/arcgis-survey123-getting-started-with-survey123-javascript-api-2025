@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multilingual Form - Survey123 Demo</title>
+    <title>Demo 1: Map + Survey</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://survey123beta.arcgis.com/api/jsapi/latest"></script>
+    <script src="https://js.arcgis.com/4.28/"></script>
+    <script src="https://survey123dev.arcgis.com/api/jsapi/latest"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Demo 4: AI-Powered Transcription & Translation</h1>
+        <div class="left">
+            <div id="mapContainer"></div>
+        </div>
         <div id="surveyContainer"></div>
     </div>
     <script type="module" src="app.js"></script>
