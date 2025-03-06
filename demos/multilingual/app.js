@@ -7,6 +7,13 @@ const LANGUAGES = [
     { code: 'zh-cn', name: '简体中文' }
 ];
 
+// OpenAI API configuration
+const OPENAI_CONFIG = {
+    apiKey: CONFIG.openai.apiKey,
+    audioEndpoint: CONFIG.openai.endpoints.audio,
+    translationEndpoint: CONFIG.openai.endpoints.chat
+};
+
 // Survey123 WebForm configuration
 const webform = new Survey123WebForm({
     container: 'surveyContainer',
@@ -15,24 +22,12 @@ const webform = new Survey123WebForm({
     portalUrl: 'https://www.arcgis.com',
     version: 'latest',
     onFormLoaded: (data) => {
-        console.log('Form loaded:', data);
-        resizeWebform(data.contentHeight);
         createLanguageSelector();
-
     },
-    onFormSubmitted: handleFormSubmit,
     onFormResized: (data) => {
-        console.log('Form resized', data);
         resizeWebform(data.contentHeight);
     }
 });
-
-// OpenAI API configuration
-const OPENAI_CONFIG = {
-    apiKey: CONFIG.openai.apiKey,
-    audioEndpoint: CONFIG.openai.endpoints.audio,
-    translationEndpoint: CONFIG.openai.endpoints.chat
-};
 
 // Listen for changes to the 'trigger_field_name' question
 webform.on("questionValueChanged", async function (event) {
@@ -43,7 +38,7 @@ webform.on("questionValueChanged", async function (event) {
     }
 });
 
-
+// This function processes the audio file by transcribing and translating its content.
 async function processAudio(file) {
     try {
 
@@ -128,23 +123,6 @@ async function translateText(text) {
     } catch (error) {
         console.error('Translation error:', error);
         throw new Error('Failed to translate text');
-    }
-}
-
-// Handle form submission
-async function handleFormSubmit(data) {
-    console.log('Form submitted:', data);
-
-    if (data.audioData) {
-        try {
-            const transcription = await transcribeAudio(data.audioData);
-            const translation = await translateText(transcription);
-
-            webform.setFieldValue('original_text', transcription);
-            webform.setFieldValue('translated_text', translation);
-        } catch (error) {
-            console.error('Failed to process form audio:', error);
-        }
     }
 }
 
