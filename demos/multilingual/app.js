@@ -14,6 +14,18 @@ const webform = new Survey123WebForm({
     clientId: CONFIG.survey123.clientId,
     portalUrl: 'https://www.arcgis.com',
     version: 'latest',
+    questionValue:{
+        location_name: "Sonoma",
+        your_name: "Carlos",
+        severity_of_the_wildfire: "Serious"
+    },
+    onFormLoaded: ((e) => {
+        webform.setGeometry({
+            x: -122.8,
+            y: 38.5,
+            sptialReference: { wkid: 4326 }
+        })
+    }),
     onFormResized: (data) => {
         resizeWebform(data.contentHeight);
     }

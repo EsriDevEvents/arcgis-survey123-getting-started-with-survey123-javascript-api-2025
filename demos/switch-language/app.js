@@ -19,6 +19,9 @@ const webform = new Survey123WebForm({
     itemId: SURVEY_CONFIG.itemId,
     clientId: SURVEY_CONFIG.clientId,
     portalUrl: SURVEY_CONFIG.portalUrl,
+    questionValue: {
+        your_name: "Carlos"
+    },
     onFormLoaded: createLanguageSelector,
     onFormResized: (data) => {
         resizeWebform(data.contentHeight);

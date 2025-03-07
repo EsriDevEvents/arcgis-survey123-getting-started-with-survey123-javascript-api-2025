@@ -24,6 +24,9 @@ const webform = new Survey123WebForm({
     clientId: SURVEY_CONFIG.clientId,
     portalUrl: SURVEY_CONFIG.portalUrl,
     hideElements: ['navbar'],
+    questionValue: {
+        your_name: "Alex"
+    },
     onFormLoaded: changeLikertStyle,
     onFormResized: (data) => {
         resizeWebform(data.contentHeight);

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function initializeWebForm(){
+function initializeWebForm() {
     return new Survey123WebForm({
         container: 'surveyContainer',
         itemId: SURVEY_CONFIG.itemId,
@@ -59,6 +59,10 @@ function initializeWebForm(){
         portalUrl: SURVEY_CONFIG.portalUrl,
         hideElements: ['navbar', 'description'],
         token: SURVEY_CONFIG.token,
+        width: 1,
+        questionValue:{
+            your_name: "Alex"
+        },
         version: 'latest',
         onFormSubmitted: handleFormSubmit,
         onFormResized: (data) => {

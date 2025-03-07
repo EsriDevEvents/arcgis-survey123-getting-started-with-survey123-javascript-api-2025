@@ -21,7 +21,7 @@ const SURVEY_CONFIG = {
 
 
 // Initialize Survey123 WebForm
-new Survey123WebForm({
+const webform=new Survey123WebForm({
     container: 'surveyContainer',
     itemId: SURVEY_CONFIG.itemId,
     clientId: SURVEY_CONFIG.clientId,
@@ -30,6 +30,20 @@ new Survey123WebForm({
     autoRefresh: -1,
     portalUrl: SURVEY_CONFIG.portalUrl,
     hideElements: ['navbar', 'description'],
+    questionValue: {
+        your_name: "Carlos",
+        severity_of_the_wildfire: "Serious",
+        location_name: "Sonoma",
+        wildfire_description_text: "La zona de investigación se encuentra en el condado de Sonoma, California del Norte. El incendio forestal ha arrasado más de 5,000 acres de bosque y destruido alrededor de 200 edificios, causando grandes pérdidas. El 80% de los residentes fueron evacuados. La calidad del aire es extremadamente mala, algunas carreteras están cerradas y los esfuerzos de rescate continúan. La comunidad afectada necesita urgentemente ayuda y reconstrucción.",
+        wildfire_description_text_en: "The research area is located in Sonoma County, Northern California. The wildfire has scorched over 5,000 acres of forest and destroyed around 200 buildings, causing significant losses. 80% of the residents have been evacuated. The air quality is extremely poor, some roads are closed, and rescue efforts are ongoing. The affected community urgently needs assistance and rebuilding.", "globalid": "{EF5257DA-3DB9-4FF0-8EFC-A1F8C4D7FBAF}"
+    },
+    onFormLoaded: (() => {
+        webform.setGeometry({
+            x: -122.8,
+            y: 38.5,
+            sptialReference: { wkid: 4326 }
+        })
+    }),
     onFormSubmitted: ((event) => {
         const objectid = event.surveyFeatureSet.features[0].attributes.objectid;
         showReportPage(objectid);
