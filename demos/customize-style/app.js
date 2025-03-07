@@ -8,13 +8,31 @@ const SURVEY_CONFIG = {
 };
 
 // color based on severity value
-const colors = {
-    Minor: '#4CAF50', // Green
-    Moderate: '#8BC34A', // Light Green
-    Serious: '#FFC107', // Amber/Yellow
-    Severe: '#FF9800', // Orange
-    Catastrophic: '#F44336', // Red
+const primaryColors = {
+    Minor: '#31872E', // Green
+    Moderate: '#56702E', // Light Green
+    Serious: '#B16E23', // Amber/Yellow
+    Severe: '#E4A810', // Orange
+    Catastrophic: '#C5292C', // Red
     default: '#31872e' // Default color
+};
+
+// color based on severity value
+const textColors = {
+    Minor: '#353535',
+    Moderate: '#1A3837',
+    Serious: '#7B582D',
+    Severe: '#333081',
+    Catastrophic: '#6B2D2E',
+    default: '#31872e'
+};
+
+const backgroundImages = {
+    Minor: 'https://localhost:3000/demos/customize-style/images/1.jpeg',
+    Moderate: 'https://localhost:3000/demos/customize-style/images/2.jpeg',
+    Serious: 'https://localhost:3000/demos/customize-style/images/3.jpeg',
+    Severe: 'https://localhost:3000/demos/customize-style/images/4.jpeg',
+    Catastrophic: 'https://localhost:3000/demos/customize-style/images/5.jpeg'
 };
 
 // Initialize Survey123 WebForm
@@ -27,10 +45,7 @@ const webform = new Survey123WebForm({
     questionValue: {
         your_name: "Alex"
     },
-    onFormLoaded: changeLikertStyle,
-    onFormResized: (data) => {
-        resizeWebform(data.contentHeight);
-    }
+    onFormLoaded: changeLikertStyle
 });
 
 // Change likert question style on form loaded
@@ -46,11 +61,19 @@ webform.on("questionValueChanged", async (event) => {
         const severityValue = values['severity_of_the_wildfire'];
 
         // Update the webform theme based on severity value
-        const backgroundColor = colors[severityValue];
         webform.setTheme({
+            form: {
+                primaryColor: primaryColors[severityValue],
+                textColor: textColors[severityValue],
+                backgroundOpacity: 0.9
+            },
             webpage: {
-                backgroundColor: backgroundColor
+                backgroundImage: backgroundImages[severityValue]
+            },
+            header: {
+                backgroundColor: primaryColors[severityValue]
             }
+
         });
     }
 })
@@ -66,7 +89,7 @@ function resizeWebform(height) {
 // Create style object for webform
 function createStyleObject() {
     const styles = {};
-    for (const [index, [key, value]] of Object.entries(colors).entries()) {
+    for (const [index, [key, value]] of Object.entries(primaryColors).entries()) {
         styles[`& .or-appearance-likert > fieldset > div.option-wrapper > label:nth-child(${index + 1}) > i.webform-svg-icon.background > svg > g > path`] = {
             fill: value
         };

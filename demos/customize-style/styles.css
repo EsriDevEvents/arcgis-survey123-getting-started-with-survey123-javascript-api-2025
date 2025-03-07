@@ -1,12 +1,16 @@
 body {
     margin: 0;
-    padding: 20px;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html, body {
+    height: 100%;
 }
 
 .container {
-    max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 h1 {
@@ -16,7 +20,8 @@ h1 {
 }
 
 #surveyContainer {
+    flex-grow: 1;
     border: 1px solid #e6e6e6;
-    border-radius: 8px;
-    overflow: hidden;
+    /* border-radius: 8px; */
+    /* overflow: hidden; */
 } 
